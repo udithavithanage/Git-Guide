@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Workflow Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Git Workflow Guide</h1>
+        <p class="subtitle">
+          Step-by-step guide for updating your branch with the latest changes
+          from the main branch before pushing your own changes.
+        </p>
+      </header>
+
+      <section class="guide">
+        <h2>Steps to Update Your Branch</h2>
+        <div class="step">
+          <h3>1. Commit Your Local Changes</h3>
+          <p>
+            First, commit any changes in your working directory to avoid
+            conflicts.
+          </p>
+          <pre><code>git add .</code></pre>
+          <br />
+          <pre><code>git commit -m "Your commit message"</code></pre>
+        </div>
+
+        <div class="step">
+          <h3>2. Switch to Your Branch</h3>
+          <p>
+            Ensure you’re on your current working branch (the one you want to
+            push).
+          </p>
+          <pre><code>git checkout your-branch-name</code></pre>
+        </div>
+
+        <div class="step">
+          <h3>3. Pull Latest Changes from the Main Branch</h3>
+          <p>
+            You need to fetch and merge the latest updates from the main branch
+            into your current branch.
+          </p>
+          <pre><code>git pull origin main</code></pre>
+          <p>
+            If there are no conflicts, it will merge automatically. If there are
+            conflicts, Git will prompt you to resolve them.
+          </p>
+        </div>
+
+        <div class="step">
+          <h3>4. Resolve Any Conflicts (If Any)</h3>
+          <p>
+            If conflicts occur during the merge, Git will mark the files as
+            conflicted. Open those files, resolve the conflicts manually, then
+            stage and commit the resolved files:
+          </p>
+          <pre><code>git add conflicted-file</code></pre>
+          <br />
+          <pre><code>git commit -m "Resolved merge conflicts"</code></pre>
+        </div>
+
+        <div class="step">
+          <h3>5. Push Your Changes to the Remote Repository</h3>
+          <p>
+            After successfully updating your branch and resolving any conflicts,
+            push your changes to the remote repository.
+          </p>
+          <pre><code>git push origin your-branch-name</code></pre>
+        </div>
+      </section>
+
+      <footer>
+        <p>Summary:</p>
+        <ul>
+          <li>Commit local changes.</li>
+          <li>
+            Pull the latest changes from the main branch (<code
+              >git pull origin main</code
+            >).
+          </li>
+          <li>Resolve conflicts (if any).</li>
+          <li>
+            Push your updates (<code>git push origin your-branch-name</code>).
+          </li>
+        </ul>
+        <p class="author">Author: Uditha Vithanage</p>
+      </footer>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
