@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Complete Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        h2, h3 {
+            color: #34495e;
+        }
+
+        code {
+            background-color: #ecf0f1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            color: #e74c3c;
+        }
+
+        pre {
+            background-color: #ecf0f1;
+            padding: 12px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .step {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .step:hover {
+            background-color: #f0f0f0;
+        }
+
+        .step h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .step-content {
+            display: none;
+            padding-top: 10px;
+        }
+
+        .step.active .step-content {
+            display: block;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .author {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Git Complete Guide</h1>
+        <p class="subtitle">Comprehensive guide to Git commands and best practices.</p>
+    </header>
+
+    <section class="guide">
+
+        <div class="step">
+            <h3>1. Initialize a Repository ➕</h3>
+            <div class="step-content">
+                <p>Create a new Git repository:</p>
+                <pre><code>git init</code></pre>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>2. Create and Switch Branch 🌿</h3>
+            <div class="step-content">
+                <p>Create and switch to a new branch:</p>
+                <pre><code>git checkout -b feature-branch</code></pre>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>3. Switch Branches 🔀</h3>
+            <div class="step-content">
+                <p>Switch to an existing branch:</p>
+                <pre><code>git checkout branch-name</code></pre>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>4. Stage and Commit Changes ✅</h3>
+            <div class="step-content">
+                <p>Stage changes:</p>
+                <pre><code>git add .</code></pre>
+                <p>Commit changes:</p>
+                <pre><code>git commit -m "Your commit message"</code></pre>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>5. Push and Set Upstream 🚀</h3>
+            <div class="step-content">
+                <p>Push to the remote branch and set upstream:</p>
+                <pre><code>git push -u origin feature-branch</code></pre>
+                <p><strong>Purpose of `-u`:</strong>  
+                    - `-u` (or `--set-upstream`) links your local branch with the remote branch.  
+                    - After setting upstream, future pulls and pushes can be done with just `git pull` and `git push`.  
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>6. Pull Latest Changes ⬇️</h3>
+            <div class="step-content">
+                <p>To get the latest changes from the remote repository:</p>
+                <pre><code>git pull origin branch-name</code></pre>
+                <p><strong>Important:</strong> `-u` is **not used** with `git pull` because upstream tracking is already set with `git push -u`.</p>
+                <p><strong>Best Practice:</strong> After using `git push -u`, you can simply run:</p>
+                <pre><code>git pull</code></pre>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>7. Merge Branches 🔄</h3>
+            <div class="step-content">
+                <p>Switch to the main branch:</p>
+                <pre><code>git checkout main</code></pre>
+                <p>Merge changes from another branch:</p>
+                <pre><code>git merge feature-branch</code></pre>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>8. Check Commit History 📜</h3>
+            <div class="step-content">
+                <p>View commit history:</p>
+                <pre><code>git log</code></pre>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p><strong>Summary:</strong></p>
+        <ul>
+            <li>Create → Stage → Commit → Push → Merge → Pull</li>
+            <li>Use `-u` only with `git push` to track upstream.</li>
+            <li>After setting upstream, use `git pull` without specifying branches.</li>
+        </ul>
+        <p class="author">Author: Uditha Vithanage</p>
+    </footer>
+</div>
+
+<script>
+    document.querySelectorAll('.step h3').forEach(header => {
+        header.addEventListener('click', () => {
+            const parent = header.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
